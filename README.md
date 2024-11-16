@@ -1,16 +1,13 @@
-# kisiler_uygulamasi
+# KİŞİLER UYGULAMASI
+<h2>SQLite ile Kişi Yönetimi Uygulaması</h2>
+<p>
+Bu uygulama, SQLite veritabanı kullanarak kişileri ekleyip, güncelleyip ve silebileceğiniz bir sistem sunmaktadır. Kullanıcılar, kişisel bilgilerini veritabanına kaydedebilir, mevcut bilgileri güncelleyebilir veya veritabanından silebilir. Uygulama, temel CRUD (Create, Read, Update, Delete) işlemlerini gerçekleştiren kullanıcı dostu bir arayüz sunmaktadır.
 
-A new Flutter project.
+Veritabanı bağlantısı SQLite üzerinden yönetilmekte ve kullanıcılar veritabanı ile sorunsuz bir şekilde etkileşime geçebilmektedir.
+</p>
+<div style="display: flex; justify-content: space-between;">
+    <img src="assets/images/readme1.png" alt="image 1" style="width: 25%; height: auto;">
+    <img src="assets/images/readme2.png" alt="image 2" style="width: 25%; height: auto;">
+    <img src="assets/images/readme3.png" alt="image 3" style="width: 25%; height: auto;">
+</div>
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
