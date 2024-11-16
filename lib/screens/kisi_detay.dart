@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../Kisiler.dart';
+import '../Kisilerdao.dart';
 
 class KisiDetay extends StatefulWidget {
   Kisiler kisi;
@@ -17,7 +18,7 @@ class _KisiDetayState extends State<KisiDetay> {
 
 //Bilgi guncelleme methodu
   Future<void> guncelle(int kisi_id, String kisi_ad, String kisi_tel) async {
-    print("$kisi_ad - $kisi_tel bilgileri güncellendi");
+    await Kisilerdao().kisiGuncelle(kisi_id, kisi_ad, kisi_tel);
   }
 
   @override

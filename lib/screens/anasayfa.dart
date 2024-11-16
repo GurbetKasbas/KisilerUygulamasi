@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:kisiler_uygulamasi/Kisilerdao.dart';
 import 'package:kisiler_uygulamasi/screens/kisi_detay.dart';
 import 'package:kisiler_uygulamasi/screens/kisi_kayit.dart';
 
@@ -20,27 +21,23 @@ class _AnasayfaState extends State<Anasayfa> {
 
 //Veri kümesini olusturmak için gerekli method
   Future<List<Kisiler>> tumKisileriGoster() async {
-    //Olusturacağımız kisiler nesnelerini tutucak bir liste tanımladık
-    var kisilerListesi = <Kisiler>[];
-
-    var k1 = Kisiler(1, "Ahmet", "99999999999999");
-    var k2 = Kisiler(2, "Mehmet", "99999999999999");
-    var k3 = Kisiler(3, "Zeynep", "99999999999999");
-    var k4 = Kisiler(4, "Ahmet", "99999999999999");
-    var k5 = Kisiler(5, "Ahmet", "99999999999999");
-
-    kisilerListesi.add(k1);
-    kisilerListesi.add(k2);
-    kisilerListesi.add(k3);
-    kisilerListesi.add(k4);
-    kisilerListesi.add(k5);
-
+    //Olusturacağımız kisiler nesnelerini tutucak bir değişken tanımladık
+    var kisilerListesi = await Kisilerdao().tumKisiler();
     return kisilerListesi;
   }
 
+//Arama yapmak için kullanılacak method 
+Future<List<Kisiler>> aramaYap(String aramaKelimesi) async{
+  var kisilerListesi = await Kisilerdao().kisiArama(aramaKelimesi);
+  return kisilerListesi;
+}
+
+
+
+
   //Numarayı silmek için method
   Future<void> sil(int kisi_id) async {
-    print("$kisi_id silindi");
+    await Kisilerdao().kisiSilme(kisi_id , );
 
     setState(() {});
   }
@@ -104,7 +101,9 @@ class _AnasayfaState extends State<Anasayfa> {
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: FutureBuilder<List<Kisiler>>(
-            future: tumKisileriGoster(),
+            future: aramaYapiliyorMu 
+            ? aramaYap(aramaKelimesi)
+            :  tumKisileriGoster(),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 //Aldığım veriyim tanımladığım değişkende tuutyorum
